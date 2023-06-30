@@ -72,4 +72,27 @@ void main() {
   }
 
   sumOfDigits(123456); // > 21
+
+  // Write a function to find the largest number in a list
+  // To tackle this problem, we can sort the list
+  // Bubble sort algorithm:
+  // https://www.tutorialspoint.com/data_structures_algorithms/bubble_sort_algorithm.htm
+  void findLargestElement(List list) {
+    for (var i = 0; i < list.length - 1; i++) {
+      bool swapped = false;
+      for (var j = 0; j < list.length - 1; j++) {
+        var temp = list[j];
+        if (list[j] > list[j + 1]) {
+          swapped = true;
+          list[j] = list[j + 1];
+          list[j + 1] = temp;
+        } else {
+          swapped = false;
+        }
+      }
+    }
+    print("${list.last} is the largest element");
+  }
+
+  findLargestElement([2, 3, 7, 5, 1]); // > 7 is the largest element
 }
